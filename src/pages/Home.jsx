@@ -6,6 +6,7 @@ import {
 	TrendingUp,
 	Users,
 } from 'lucide-react'
+import { Link } from 'react-router-dom'
 
 export default function Home() {
 	const featuredPlaces = [
@@ -58,9 +59,9 @@ export default function Home() {
 	]
 
 	return (
-		<div className='min-h-screen bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50'>
+		<div className='min-h-screen bg-linear-to-r from-blue-50 via-purple-50 to-pink-50'>
 			{/* Hero Section */}
-			<div className='relative overflow-hidden bg-gradient-to-r from-blue-600 to-purple-600 text-white'>
+			<div className='relative overflow-hidden bg-linear-to-r from-blue-600 to-purple-600 text-white'>
 				<div className='absolute inset-0 bg-black opacity-10'></div>
 				<div className='relative max-w-7xl mx-auto px-6 py-20 md:py-28'>
 					<div className='text-center'>
@@ -81,7 +82,7 @@ export default function Home() {
 									placeholder='Search for places, restaurants, museums...'
 									className='flex-1 px-4 py-3 bg-transparent text-gray-800 outline-none'
 								/>
-								<button className='bg-gradient-to-r from-blue-600 to-purple-600 text-white px-8 py-3 rounded-full font-semibold hover:from-blue-700 hover:to-purple-700 transition-all duration-200 hover:scale-105 shadow-lg'>
+								<button className='bg-linear-to-r from-blue-600 to-purple-600 text-white px-8 py-3 rounded-full font-semibold hover:from-blue-700 hover:to-purple-700 transition-all duration-200 hover:scale-105 shadow-lg'>
 									Search
 								</button>
 							</div>
@@ -150,17 +151,21 @@ export default function Home() {
 			<div className='max-w-7xl mx-auto px-6 py-16'>
 				<div className='flex items-center justify-between mb-8'>
 					<h2 className='text-3xl font-bold text-gray-800'>Featured Places</h2>
-					<button className='text-purple-600 hover:text-purple-700 font-semibold flex items-center gap-2 group'>
+
+					<Link
+						to='/explore'
+						className='text-purple-600 hover:text-purple-700 font-semibold flex items-center gap-2 group'
+					>
 						View All
 						<ArrowRight
 							size={20}
 							className='group-hover:translate-x-1 transition-transform'
 						/>
-					</button>
+					</Link>
 				</div>
 
 				<div className='flex flex-col gap-6'>
-					{featuredPlaces.map((place, index) => (
+					{featuredPlaces.map(place => (
 						<div
 							key={place.id}
 							className='bg-white rounded-xl shadow-lg overflow-hidden cursor-pointer hover:shadow-2xl transition-all duration-300 group flex flex-col md:flex-row'
@@ -198,7 +203,7 @@ export default function Home() {
 											({place.reviews} reviews)
 										</span>
 									</div>
-									<button className='bg-gradient-to-r from-purple-600 to-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:from-purple-700 hover:to-blue-700 transition-all duration-200 hover:scale-105 shadow-md'>
+									<button className='bg-linear-to-r from-purple-600 to-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:from-purple-700 hover:to-blue-700 transition-all duration-200 hover:scale-105 shadow-md'>
 										View Details
 									</button>
 								</div>
